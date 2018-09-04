@@ -4,25 +4,20 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
-var config = require('./config/database');
 var session = require('express-session');
 var expressValidator = require('express-validator');
 
-// connect to database 
-mongoose.connect(config.database);
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-  console.log('Connected to MongoDB');
-});
+// connect .env
+require('dotenv').config();
 
+var app = express();
+
+//connect to mongodb
+require('./config/database');
 
 var index = require('./routes/index');
 var adminPages = require('./routes/admin_pages');
 var users = require('./routes/users');
-
-var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
