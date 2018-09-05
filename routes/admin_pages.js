@@ -166,9 +166,21 @@ router.post('/edit-page/:slug', function(req, res) {
           });
          
         }
+
     });
+
   }
 
 });
+/* GET Delete page  */
+router.get('/delete-page/:id', function(req, res) {
+    Page.findByIdAndRemove(req.params.id, function (err) {
+      if (err) 
+      return console.log(err);
+
+      req.flash('success', 'Page deleted!');
+              res.redirect('/admin/pages/');
+      });
+  });
 
 module.exports = router;
