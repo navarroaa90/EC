@@ -17,6 +17,7 @@ require('./config/database');
 
 var index = require('./routes/index');
 var adminPages = require('./routes/admin_pages');
+var adminCategories = require('./routes/admin_categories');
 var users = require('./routes/users');
 
 // view engine setup
@@ -72,6 +73,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/admin/pages', adminPages);
+app.use('/admin/categories', adminCategories);
 app.use('/', index);
 app.use('/users', users);
 
