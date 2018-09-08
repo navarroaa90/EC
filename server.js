@@ -19,6 +19,8 @@ require('./config/database');
 var index = require('./routes/index');
 var adminPages = require('./routes/admin_pages');
 var adminCategories = require('./routes/admin_categories');
+var adminProducts = require('./routes/admin_products');
+
 var users = require('./routes/users');
 
 // view engine setup
@@ -65,6 +67,23 @@ app.use(expressValidator({
       msg :msg,
       value: value
     };
+  },
+  customValidators: {
+    isImage: function(value, filename) {
+        var extension = (path.extname(filename)).toLowerCase();
+        switch(extension) {
+        case '.jpg':
+            return '.jpg';
+          case '.jpeg':
+            return '.jpeg';
+          case '.png':
+            return '.png';
+          case '':
+            return '.jpg';
+          default:
+            return false;
+      }
+    }
   }
 }));
 
@@ -80,6 +99,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/admin/pages', adminPages);
 app.use('/admin/categories', adminCategories);
+app.use('/admin/products', adminProducts);
 app.use('/', index);
 app.use('/users', users);
 
