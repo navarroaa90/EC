@@ -17,6 +17,8 @@ var app = express();
 require('./config/database');
 
 var index = require('./routes/index');
+var products = require('./routes/products')
+var cart = require('./routes/cart');
 var adminPages = require('./routes/admin_pages');
 var adminCategories = require('./routes/admin_categories');
 var adminProducts = require('./routes/admin_products');
@@ -35,6 +37,19 @@ app.locals.errors = null;
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+
+// Get Category Model
+var Category = require('./models/category');
+
+// Get all categories to pass to header.ejs
+Category.find(function (err, categories) {
+    if (err) {
+        console.log(err);
+    } else {
+        app.locals.categories = categories;
+    }
+});
+
 
 // Express fileupload middleware
 app.use(fileUpload());
@@ -94,6 +109,12 @@ app.use(function (req, res, next) {
   next();
 });
 
+app.get('*', function(req, res, next) {
+  res.locals.cart = req.session.cart;
+  next();
+
+});
+
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -101,6 +122,8 @@ app.use('/admin/pages', adminPages);
 app.use('/admin/categories', adminCategories);
 app.use('/admin/products', adminProducts);
 app.use('/', index);
+app.use('/products', products);
+app.use('/cart', cart);
 app.use('/users', users);
 
 
