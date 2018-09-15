@@ -26,3 +26,7 @@ ul.gallery li {
     display: inline-block;
     list-style: none;
 }
+
+table.alignmiddle {
+    vertical-align: middle !important;
+  }
