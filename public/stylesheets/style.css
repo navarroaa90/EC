@@ -1,5 +1,65 @@
+html, body {
+  height: 100%;
+ 
+}
+
+body {
+  background: linear-gradient( 180deg, rgb( 247, 248, 245) 50%,#3a4660b0 50%) no-repeat fixed;
+
+}
+
+a , h1 , h2, h3, h4, p {
+  
+  font-family: 'Playfair Display', serif;
+}
+
+.navbar {
+  background-color: #3a4660;
+}
+
+a, .card-header, .btn, .btn-primary {
+  color: peachpuff;
+}
+.icon-bar {
+  background-color: #ed8a63;
+}
+.list-group-item {
+  background-color: #3a4660;
+}
+
+.edwin {
+  height: 400px;
+  width: 560px;
+}
+.bio {
+  text-align: left;
+}
+.aboutme {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+.contact {
+  text-decoration: none;
+  list-style-type: none;
+}
+.contactus {
+  text-align: center;
+}
+
+.learn, .card-header, .card-text, .my-4 {
+  text-align: center;
+}
+
+.doc {
+  width: 1600px;
+  height: 400px;
+}
+.no-padding {
+  padding-left: 0;
+  padding-right: 0;
+}
 img.pimage {
-  width:  150px;
+  width:  120px;
 }
 a.pa {
   display: inline-block;
@@ -50,3 +110,14 @@ table.alignmiddle {
   position: absolute;
   left: -3000px;
 }
+
+.alert-error {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+
+
+
+
+

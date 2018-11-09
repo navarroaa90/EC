@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.1/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="/stylesheets/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
     <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
     <title><%= title %></title>
 </head>
@@ -21,7 +22,7 @@
             <img src="/images/ajax-loader.gif" alt="">
         </div>
       </div>
-        <nav class="navbar navbar-inverse">
+        <nav class="navbar ">
           <div class="container">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -36,7 +37,9 @@
               <ul class="nav navbar-nav">
                 <li><a href="/">Home</a></li>
                 <li><a href="/products">Products</a></li>
-                <li><a href="#">How to Use</a></li>
+                <li><a href="/aboutme">About Me</a></li>
+                <li><a href="/contactus">Contact Us</a></li>
+                
               </ul>
               <ul class="nav navbar-nav navbar-right">
               <li>
@@ -50,13 +53,33 @@
                   
                   )</a>
               </li>
+              <% if (user) { %>
+                <li><a href="/users/logout">Hi, <%= user.username %> (logout)</a></li>
+            <%  } else {%>
 
-              </ul>
+              <li><a href="/users/register">Register</a></li>
+              <li><a href="/users/login">Login</a></li>
+
+            <%  } %>
+
+            <% if (user && user.admin == 1) { %>
+              <li><a href="/admin/pages">Admin Area</a></li>
+          <%  } %>
+
+             </ul>
             </div><!--/.nav-collapse -->
           </div>
         </nav>
               <div class="container">
                     <%- messages('messages', locals) %>
+
+                    <% if (errors) {%>
+                      <% errors.forEach(function(error) { %>
+                      <div class="alert alert-danger">
+                          <%= error.msg %>
+                      </div>
+                      <% });%>
+                  <% }%>
                     
                     <br><br>
                     
