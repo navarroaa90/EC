@@ -15,11 +15,16 @@ a , h1 , h2, h3, h4, p {
   font-family: 'Playfair Display', serif;
 }
 
+h1 {
+  text-align: center;
+  text-decoration: underline;
+}
+
 .navbar {
   background-color: #3a4660;
 }
 
-a, .card-header, .btn, .btn-primary {
+a, .btn, .btn-primary {
   color: white;
   font-size: 17px;
 }
@@ -36,6 +41,13 @@ a, .card-header, .btn, .btn-primary {
 footer {
   background-color: #3a4660;
   color: #ed8a63;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
 .edwin {
