@@ -3,10 +3,10 @@ html, body {
  
 }
 
-body {
+/* body {
   background: linear-gradient( 180deg, rgb( 247, 248, 245) 50%,#3a4660b0 50%) no-repeat fixed;
 
-}
+} */
 p {
   font-size: 17px;
 }
@@ -20,7 +20,7 @@ a , h1 , h2, h3, h4, p {
 }
 
 a, .card-header, .btn, .btn-primary {
-  color: #ed8a63;
+  color: white;
   font-size: 17px;
 }
 .icon-bar {
