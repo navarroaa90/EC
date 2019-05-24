@@ -7,10 +7,10 @@ html, body {
   background: linear-gradient( 180deg, rgb( 247, 248, 245) 50%,#3a4660b0 50%) no-repeat fixed;
 
 } */
-p {
+p, ul, li {
   font-size: 17px;
 }
-a , h1 , h2, h3, h4, p {
+a , h1 , h2, h3, h4, p , ul, li {
   
   font-family: 'Playfair Display', serif;
 }
@@ -153,7 +153,9 @@ table.alignmiddle {
   border-color: #ebccd1;
 }
 
-
+.vd {
+  color: #3a4660;
+}
 
 
 
