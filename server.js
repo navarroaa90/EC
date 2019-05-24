@@ -19,6 +19,7 @@ require('./config/database');
 
 var index = require('./routes/index');
 var aboutMe = require('./routes/aboutme');
+var referral = require('./routes/referral');
 var contactUs = require('./routes/contactus');
 var products = require('./routes/products');
 var cart = require('./routes/cart');
@@ -133,6 +134,7 @@ app.use('/admin/categories', adminCategories);
 app.use('/admin/products', adminProducts);
 app.use('/', index);
 app.use('/aboutme', aboutMe);
+app.use('/referral', referral)
 app.use('/contactus', contactUs);
 app.use('/products', products);
 app.use('/cart', cart);
