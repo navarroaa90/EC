@@ -22,6 +22,7 @@ var aboutMe = require('./routes/aboutme');
 var referral = require('./routes/referral');
 var contactUs = require('./routes/contactus');
 var products = require('./routes/products');
+var video = require('./routes/video');
 var cart = require('./routes/cart');
 var adminPages = require('./routes/admin_pages');
 var adminCategories = require('./routes/admin_categories');
@@ -137,6 +138,7 @@ app.use('/aboutme', aboutMe);
 app.use('/referral', referral)
 app.use('/contactus', contactUs);
 app.use('/products', products);
+app.use('/video', video);
 app.use('/cart', cart);
 app.use('/users', users);
 
