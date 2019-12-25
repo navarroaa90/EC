@@ -19,6 +19,9 @@ require('./config/database');
 
 var index = require('./routes/index');
 var aboutMe = require('./routes/aboutme');
+var immobilizer = require('./routes/immobilizer');
+var chair = require('./routes/chair');
+var questions = require('./routes/questions');
 var referral = require('./routes/referral');
 var contactUs = require('./routes/contactus');
 var products = require('./routes/products');
@@ -134,6 +137,9 @@ app.use('/admin/pages', adminPages);
 app.use('/admin/categories', adminCategories);
 app.use('/admin/products', adminProducts);
 app.use('/', index);
+app.use('/immobilizer', immobilizer);
+app.use('/chair', chair);
+app.use('/questions', questions);
 app.use('/aboutme', aboutMe);
 app.use('/referral', referral)
 app.use('/contactus', contactUs);

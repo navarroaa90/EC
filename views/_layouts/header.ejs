@@ -31,29 +31,32 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="/" target="_blank">EC Immobilizer</a>
+              <a class="navbar-brand anav" href="/" target="_blank">EC Immobilizer</a>
             </div>
             <div id="navbar" class="collapse navbar-collapse">
               <ul class="nav navbar-nav">
-                <li><a href="/">Home</a></li>
-                <li class="nav-item dropdown"><a a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"href="#">Products</a>
+                <li><a class="anav" href="/">Home</a></li>
+                <li class="nav-item dropdown"><a a class="nav-link dropdown-toggle anav" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"href="#">Products</a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class=" vd dropdown-item" href="/products">Devices</a><br>
-                      <a class="vd dropdown-item" href="/video">Instructions</a>
-                </li>
-                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About Me</a>
+                      <a class=" vd dropdown-item" href="/products">Catalog</a><br>
+                      <a class="vd dropdown-item" href="/products/ec-pediatric-immobilizer/ec-pediatric-immobilizer-device-mdl.-gapos-102"> EC Immobilizer</a>
+                      <a class="vd dropdown-item" href="/products/ec-pediatric-immobilizer/ec-pediatric-restraining-chair-mdl-gapos-101"> Restraining Chair</a>
+                      <a class="vd dropdown-item" href="/video">Tutorial</a>
+                </li> 
+                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle anav" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About Me</a>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class=" vd dropdown-item" href="/aboutme">Edwin Cabansag</a><br>
-                  <a class="vd dropdown-item" href="/referral">Referral</a>
+                  <a class="vd dropdown-item" href="/referral">Referral</a><br>
+                  <a class= "vd dropdown-item"href="/questions">Q&A</a>
                  
                 </div></li>
-                <li><a href="/contactus">Contact Us</a></li>
+                <li><a class= "anav" href="/contactus">Contact Us</a></li>
                 
               </ul>
               <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="/cart/checkout"> My Cart (
+                <a class= "anav" href="/cart/checkout"> My Cart (
                 
                   <% if (typeof cart !== "undefined") { %>
                    <%= cart.length %>   
@@ -64,16 +67,16 @@
                   )</a>
               </li>
               <% if (user) { %>
-                <li><a href="/users/logout">Hi, <%= user.username %> (logout)</a></li>
+                <li><a class="anav" href="/users/logout">Hi, <%= user.username %> (logout)</a></li>
             <%  } else {%>
 
-              <li><a href="/users/register">Register</a></li>
-              <li><a href="/users/login">Login</a></li>
+              <li><a class= "anav" href="/users/register">Register</a></li>
+              <li><a class="anav" href="/users/login">Login</a></li>
 
             <%  } %>
 
             <% if (user && user.admin == 1) { %>
-              <li><a href="/admin/pages">Admin Area</a></li>
+              <li><a class="anav" href="/admin/pages">Admin Area</a></li>
           <%  } %>
 
              </ul>

@@ -28,7 +28,7 @@ h4 {
   background-color: #3a4660;
 }
 
-a, .btn, .btn-primary {
+.anav  {
   color: white;
   font-size: 17px;
 }
@@ -42,10 +42,14 @@ a, .btn, .btn-primary {
   background-color:#3a4660
 }
 
-footer {
+.btn, .btn-primary{
+  color: #3a4660;
+}
+
+/* .footer {
   background-color: #3a4660;
   color: #ed8a63;
-}
+} */
 
 .center {
   display: block;
@@ -61,8 +65,17 @@ footer {
   width: 70%;
 }
 
+.purch2 {
+  color: #3a4660;
+  text-align: center;
+}
+
 .imgContainer {
   float: left;
+}
+
+.purch {
+  color: #3a4660
 }
 
 .imgContainer2 {
@@ -100,7 +113,7 @@ footer {
 .contactus {
   text-align: center;
 }
-
+ 
 .learn, .card-header, .card-text, .my-4 {
   text-align: center;
 }

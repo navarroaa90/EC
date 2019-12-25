@@ -11,7 +11,7 @@
            <p><%= p.desc %></p>
            <p>$<%= parseFloat(p.price).toFixed(2) %></p>
            <% if (loggedIn) { %>
-                <p><a class= "vd"href="/cart/add/<%= p.slug %>">Add to Cart</a></p>
+                <p><a class= "purch" href="/cart/add/<%= p.slug %>">Add to Cart</a></p>
            <% }else {%>
                 <p>You must be logged in to purchase items.</p>
            <% } %>
